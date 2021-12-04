@@ -17,14 +17,6 @@ public class Tasks implements Serializable {
    * 
    */
   private static final long serialVersionUID = 1L;
-  /*public Tasks(){
-  }
-
-  public Tasks(long id, String name, String description) {
-      this.id = id;
-      this.name = name;
-      this.description = description;
-  }*/
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "task_id")

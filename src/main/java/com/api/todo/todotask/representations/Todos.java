@@ -13,21 +13,12 @@ public class Todos implements Serializable {
    */
   private static final long serialVersionUID = 1L;
 
-  /*public Todos() {}
-
-  public Todos(int id, String name, String description, List<Tasks> tasks) {
-    this.id = id;
-    this.name = name;
-    this.description = description;
-    this.tasks = tasks;
-  }*/
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "todo_item_id")
   private int id;
 
-  @Column(name = "name")
+  @Column(name = "name",  length = 50, nullable= false)
   private String name;
 
   @Column(name = "description")
@@ -69,4 +60,11 @@ public class Todos implements Serializable {
     this.tasks = tasks;
   }
 
+  @Override
+  public String toString() {
+      return "TodoList{" +
+              "id=" + id +
+              ", name='" + name + '\'' +
+              '}';
+  }
 }

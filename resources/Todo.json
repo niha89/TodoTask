@@ -1,0 +1,36 @@
+[
+    {
+        "id": 2,
+        "name": "testuser",
+        "description": "creating a list of activities to be done",
+        "tasks": [
+            {
+                "id": 4,
+                "name": "reading",
+                "description": "have to read to crack interview"
+            },
+            {
+                "id": 5,
+                "name": "hiking",
+                "description": "need to go for hiking to clear my brain"
+            },
+            {
+                "id": 6,
+                "name": "clean the house",
+                "description": "sort clothes"
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "name": "John",
+        "description": "creating a list of activities to be done",
+        "tasks": [
+            {
+                "id": 7,
+                "name": "hiking",
+                "description": "need to go for hiking to clear my brain"
+            }
+        ]
+    }
+]
