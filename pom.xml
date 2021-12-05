@@ -64,12 +64,6 @@
 			<artifactId>dropwizard-testing</artifactId>
 			<version>${dropwizard.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-client</artifactId>
-			<version>1.9.1</version>
-		</dependency>
-
 		<!-- <dependency> <groupId>org.projectlombok</groupId> <artifactId>lombok</artifactId> 
 			<version>1.18.22</version> <optional>true</optional> </dependency> -->
 		<!-- EasyMock Dependencies -->

@@ -54,13 +54,19 @@ public class App extends Application<HibernateConfiguration> {
     final Client client = new JerseyClientBuilder(environment)
         .build("DemoRESTClient");
 
-    // Application health check
+    /*
+     * Application health check
+     */
     environment.healthChecks().register("APIHealthCheck", new AppHealthCheck(client));
 
-    // Run multiple health checks
+    /*
+     * Run multiple health checks
+     */
     environment.jersey().register(new HealthCheckController(environment.healthChecks()));
 
-    // Setup Basic Security
+    /*
+     * Setup Basic Security
+     */
     environment.jersey().register(new AuthDynamicFeature(new BasicCredentialAuthFilter.Builder<User>()
         .setAuthenticator(new AppAuthenticator())
         .setAuthorizer(new AppAuthorizer())
