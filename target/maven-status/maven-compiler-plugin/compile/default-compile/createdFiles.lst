@@ -11,5 +11,4 @@ com\api\todo\todotask\configurations\HibernateConfiguration.class
 com\api\todo\todotask\representations\Todos.class
 com\api\todo\todotask\healthcheck\AppHealthCheck.class
 com\api\todo\todotask\healthcheck\HealthCheckController.class
-com\api\todo\todotask\representations\Employee.class
 com\api\todo\todotask\exceptions\TodosNotFoundException.class

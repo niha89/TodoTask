@@ -44,7 +44,7 @@ public class TodoController {
   @GET
   @UnitOfWork
   @PermitAll
-  public Response getAll(@Auth User user) {
+  public Response getAllTodoList(@Auth User user) {
     return Response.ok(todoDAO.getAll()).build();
   }
 
@@ -52,7 +52,7 @@ public class TodoController {
   @Path("/{id}")
   @UnitOfWork
   @RolesAllowed("USER")
-  public Response get(@PathParam("id") Integer id, @Auth User user) {
+  public Response getTodoById(@PathParam("id") Integer id, @Auth User user) {
     Todos todos = todoDAO.findById(id);
     if (todos != null)
       return Response.ok(todos).build();
@@ -63,7 +63,7 @@ public class TodoController {
   @POST
   @UnitOfWork
   @RolesAllowed("ADMIN")
-  public Response add(@Valid Todos person, @Auth User user) throws URISyntaxException {
+  public Response addTodoItem(@Valid Todos person, @Auth User user) throws URISyntaxException {
     // validation
     Set<ConstraintViolation<Todos>> violations = validator.validate(person);
     if (violations.size() > 0) {
@@ -80,7 +80,7 @@ public class TodoController {
   @PUT
   @Path("/{id}")
   @UnitOfWork
-  public Response update(@PathParam("id") Integer id, @Valid Todos todoDetails) {
+  public Response updateTodoById(@PathParam("id") Integer id, @Valid Todos todoDetails) {
     // validation
     Set<ConstraintViolation<Todos>> violations = validator.validate(todoDetails);
     Todos todos = todoDAO.findById(id);
@@ -104,7 +104,7 @@ public class TodoController {
   @DELETE
   @Path("/{id}")
   @UnitOfWork
-  public Response delete(@PathParam("id") Integer id) {
+  public Response deleteTodoById(@PathParam("id") Integer id) {
     Todos todo = todoDAO.findById(id);
     if (todo != null) {
       todoDAO.delete(todo);
